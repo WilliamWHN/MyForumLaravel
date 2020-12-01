@@ -14,3 +14,9 @@ yarn-error.log
 .idea/
 
 .vscode/launch.json
+
+public/assets/
+
+public/css/
+
+public/js/

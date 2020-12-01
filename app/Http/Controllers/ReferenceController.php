@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reference;
 use Illuminate\Http\Request;
 
 class ReferenceController extends Controller
@@ -13,7 +14,8 @@ class ReferenceController extends Controller
      */
     public function index()
     {
-        //
+        $references = Reference::all();
+        return view ('references.index')->with(compact('references'));
     }
 
     /**
@@ -23,7 +25,8 @@ class ReferenceController extends Controller
      */
     public function create()
     {
-        //
+        $reference = new Reference();
+        return view ('references.create')->with(compact('reference'));
     }
 
     /**
@@ -34,7 +37,11 @@ class ReferenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reference = new Reference();
+        $reference->description = $request->input('description');
+        $reference->url = $request->input('url');
+        $reference->save();
+        return redirect(route('references.index'))->with('message','Référence ajoutée');
     }
 
     /**
@@ -45,7 +52,8 @@ class ReferenceController extends Controller
      */
     public function show($id)
     {
-        //
+        $reference = Reference::find($id);
+        return view ('references.show')->with(compact('reference'));
     }
 
     /**
@@ -56,7 +64,8 @@ class ReferenceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reference = Reference::find($id);
+        return view ('references.update')->with(compact('reference'));
     }
 
     /**
@@ -68,7 +77,12 @@ class ReferenceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reference = Reference::find($id);
+        $reference->description = $request->input('description');
+        $reference->url = $request->input('url');
+        $reference->save();
+        $request->session()->flash('message',"Modification enregistrée");
+        return view ('references.show')->with(compact('reference'));
     }
 
     /**
@@ -79,6 +93,8 @@ class ReferenceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reference = Reference::find($id);
+        $reference->delete();
+        return redirect(route('references.index'))->with('message','Référence supprimée');
     }
 }
