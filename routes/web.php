@@ -7,6 +7,7 @@ use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StateController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
