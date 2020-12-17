@@ -15,6 +15,7 @@ class ThemeController extends Controller
      */
     public function index()
     {
+        return view('themes.index');
     }
 
     /**
@@ -46,7 +47,8 @@ class ThemeController extends Controller
      */
     public function show($id)
     {
-        //
+        $theme = Theme::find($id);
+        return view('themes.show')->with(compact('theme'));
     }
 
     /**

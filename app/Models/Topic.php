@@ -10,4 +10,14 @@ class Topic extends Model
     use HasFactory;
 
     public $timestamps = false;
+
+    public function theme()
+    {
+        return $this->belongsTo(Theme::class);
+    }
+
+    public function opinions()
+    {
+        return $this->hasMany(Opinion::class);
+    }
 }

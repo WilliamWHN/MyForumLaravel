@@ -1,5 +1,8 @@
 @extends ('layout')
 
 @section ('content')
-    <h1 class="text-center p-5">Show Theme <?= $id ?></h1>
+    <div class="p-2">Les sujets du thème {{ $theme->name }}:</div>
+    @foreach ($theme->topics as $topic)
+        <div class="p-2 ml-2">{{ $topic->description }} <span class="float-right">{{ $topic->opinions->count() }}</span></div>
+    @endforeach
 @endsection
