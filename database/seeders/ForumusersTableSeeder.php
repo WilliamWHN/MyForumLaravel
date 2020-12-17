@@ -1,9 +1,10 @@
 <?php
-namespace Database\Seeders;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
-class UsersTableSeeder extends Seeder
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class ForumusersTableSeeder extends Seeder
 {
 
     /**
@@ -13,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        
 
-
-        DB::table('users')->delete();
-
-        DB::table('users')->insert(array (
-            0 =>
+        \DB::table('forumusers')->delete();
+        
+        \DB::table('forumusers')->insert(array (
+            0 => 
             array (
                 'id' => 1,
                 'first_name' => 'Xavier',
@@ -26,7 +27,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'XCL',
                 'role_id' => 1,
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'first_name' => 'Dimitri',
@@ -34,7 +35,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'DID',
                 'role_id' => 2,
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'first_name' => 'Quentin',
@@ -42,7 +43,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'a-que-duc',
                 'role_id' => 2,
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'first_name' => 'Gabriel',
@@ -50,7 +51,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'GRR',
                 'role_id' => 2,
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'first_name' => 'Alexandre',
@@ -58,7 +59,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'alexandre',
                 'role_id' => 2,
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'first_name' => 'Cyril',
@@ -66,7 +67,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'CGE',
                 'role_id' => 2,
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'first_name' => 'Dylan',
@@ -74,7 +75,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'DOS',
                 'role_id' => 2,
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'first_name' => 'Sou',
@@ -82,7 +83,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'SSH',
                 'role_id' => 2,
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'first_name' => 'Andi',
@@ -90,7 +91,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'ASO',
                 'role_id' => 2,
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 11,
                 'first_name' => 'Sou',
@@ -98,7 +99,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'SS',
                 'role_id' => 2,
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 13,
                 'first_name' => 'Mathieu',
@@ -106,7 +107,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => 'MBU',
                 'role_id' => 2,
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 14,
                 'first_name' => 'Dark',
@@ -114,7 +115,7 @@ class UsersTableSeeder extends Seeder
                 'pseudo' => '1450',
                 'role_id' => 2,
             ),
-            12 =>
+            12 => 
             array (
                 'id' => 15,
                 'first_name' => 'William',
@@ -123,7 +124,7 @@ class UsersTableSeeder extends Seeder
                 'role_id' => 2,
             ),
         ));
-
-
+        
+        
     }
 }

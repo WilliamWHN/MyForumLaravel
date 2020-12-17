@@ -1,7 +1,8 @@
 <?php
+
 namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class ThemesTableSeeder extends Seeder
 {
@@ -13,88 +14,88 @@ class ThemesTableSeeder extends Seeder
      */
     public function run()
     {
+        
 
-
-        DB::table('themes')->delete();
-
-        DB::table('themes')->insert(array (
-            0 =>
+        \DB::table('themes')->delete();
+        
+        \DB::table('themes')->insert(array (
+            0 => 
             array (
                 'id' => 1,
                 'name' => 'Agilité',
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 8,
                 'name' => 'API',
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'name' => 'Conventions de codage',
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 11,
                 'name' => 'CSS',
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 7,
                 'name' => 'Distribution Linux',
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 4,
                 'name' => 'Éditeur de texte',
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 2,
                 'name' => 'Environnement de travail',
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 14,
                 'name' => 'Game design',
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 10,
                 'name' => 'Javascript',
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 13,
                 'name' => 'Linkedin',
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 12,
                 'name' => 'Opensource',
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 9,
                 'name' => 'Python',
             ),
-            12 =>
+            12 => 
             array (
                 'id' => 15,
                 'name' => 'SASS',
             ),
-            13 =>
+            13 => 
             array (
                 'id' => 6,
                 'name' => 'Système d\'exploitation',
             ),
-            14 =>
+            14 => 
             array (
                 'id' => 5,
                 'name' => 'TempleOS',
             ),
         ));
-
-
+        
+        
     }
 }

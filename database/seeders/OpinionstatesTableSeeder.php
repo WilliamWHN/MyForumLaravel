@@ -1,7 +1,8 @@
 <?php
+
 namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class OpinionstatesTableSeeder extends Seeder
 {
@@ -13,43 +14,43 @@ class OpinionstatesTableSeeder extends Seeder
      */
     public function run()
     {
+        
 
-
-        DB::table('opinionstates')->delete();
-
-        DB::table('opinionstates')->insert(array (
-            0 =>
+        \DB::table('opinionstates')->delete();
+        
+        \DB::table('opinionstates')->insert(array (
+            0 => 
             array (
                 'id' => 3,
                 'name' => 'En Modification',
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'name' => 'En revue',
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 1,
                 'name' => 'Nouveau',
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 6,
                 'name' => 'Obsolet',
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'name' => 'Publié',
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 4,
                 'name' => 'Rejeté',
             ),
         ));
-
-
+        
+        
     }
 }
