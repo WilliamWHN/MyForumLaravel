@@ -19,9 +19,7 @@ use App\Http\Controllers\StateController;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::resource('opinions',OpinionController::class);
 Route::resource('references',ReferenceController::class);
