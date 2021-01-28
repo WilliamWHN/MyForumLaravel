@@ -17,7 +17,15 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view ('users.index')->with(compact('users'));
+        $admins = 0;
+
+        foreach ($users as $user){
+            if($user->role_id === 3){
+                $admins++;
+            }
+        }
+
+        return view ('users.index')->with(compact('users','admins'));
     }
 
     /**
