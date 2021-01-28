@@ -20,7 +20,7 @@ protected $signature = 'make:adminuser {userid}';
 *
 * @var string
 */
-protected $description = 'Set the user up for admin rights';
+protected $description = 'Grants the admin role to a user';
 
 /**
 * Create a new command instance.
@@ -43,25 +43,14 @@ $id = $this->argument('userid');
 
 if(User::where('id', '=', $id)->exists()){
 
-    $user = User::where('username', $username)->first();
-    $user->role();
-    $user->role()->associate($role);
+    $user = User::where('id', $id)->first();
+    $user->role_id = 3;
     $user->save();
 
-    $filePath = '.env';
-    $envUserId = env('USER_ID');
-    if ($envUserId){
-        file_put_contents($filePath, str_replace('USER_ID = '.$envUserId.'', 'USER_ID = '.$user->id.'', file_get_contents($filePath)));
-    }else{
-        file_put_contents($filePath, PHP_EOL.'# Dev-login'.PHP_EOL, FILE_APPEND);
-        file_put_contents($filePath, 'USER_ID = '.$user->id.'', FILE_APPEND);
-    }
-
-
-$this->line("The user '$username' is ready for the devlogin");
+    $this->line("$user->pseudo est admin");
 
 }else{
-$this->line("Error: The user '$username' doesn't exist");
+    $this->line("L’utilisateur $id n’existe pas");
 }
 }
 }
