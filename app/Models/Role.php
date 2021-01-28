@@ -9,13 +9,24 @@ use Illuminate\Support\Facades\DB;
 
 class Role extends Model
 {
-    use HasFactory;
-
     public $timestamps = false;
 
-    public function users()
-    {
-        return $this->hasMany(User::class);
+    protected $fillable = ['slug', 'name'];
+
+    public function getSlug(){
+        return $this->slug;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function getUsers(){
+        return $this->hasMany('App\User', 'roles_id');
+    }
+
+    public function isUsed(){
+        return DB::table('users')->where('role_id', $this->id)->exists();
     }
 
 }

@@ -22,7 +22,6 @@
                 @csrf
                 <button type=submit class="btn success-color">Logout {{ Auth::user()->pseudo }}</button>
             </form>
-        <?=dd(Auth::user()->role)?>
             @if(Auth::user()->role->slug =='ADMI')
                 <li class="nav-item"><a href="{{ route('users.index') }}" class="btn">Liste des users</a></li>
             @endif
