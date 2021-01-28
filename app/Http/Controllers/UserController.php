@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\Theme;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,7 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view ('users.index');
+        $users = User::all();
+        return view ('users.index')->with(compact('users'));
     }
 
     /**
@@ -57,7 +60,17 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        if($user->role_id != 3){
+            $user->role_id = 3;
+            $message = "$user->pseudo a été nommé Admin";
+        }
+        elseif($user->role_id === 3){
+            $user->role_id = 2;
+            $message = "$user->pseudo a été supprimé des Admins";
+        }
+        $user->save();
+        return redirect(route('users.index'))->with('message',$message);
     }
 
     /**
