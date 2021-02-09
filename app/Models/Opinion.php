@@ -32,6 +32,7 @@ class Opinion extends Model
         return $this->belongsToMany(Reference::class); // here we specify table and keys because the order of the fields in the table does not comply with the convention
     }
 
+<<<<<<< HEAD
     /**
      * Comments posted by other users on this opinion, granting points in the process
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -39,5 +40,10 @@ class Opinion extends Model
     public function comments()
     {
         return $this->belongsToMany(User::class,'user_opinion')->withPivot('comment', 'points');
+=======
+    public function comments()
+    {
+        return $this->belongsToMany( User::class, 'user_opinion')->WithPivot('comment', 'points');
+>>>>>>> Dev
     }
 }

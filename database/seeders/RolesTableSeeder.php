@@ -14,6 +14,7 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
 
 
         \DB::table('roles')->delete();
@@ -42,3 +43,25 @@ class RolesTableSeeder extends Seeder
 
     }
 }
+=======
+        
+
+        \DB::table('roles')->delete();
+        
+        \DB::table('roles')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'name' => 'Prof',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'name' => 'Stud',
+            ),
+        ));
+        
+        
+    }
+}
+>>>>>>> Dev

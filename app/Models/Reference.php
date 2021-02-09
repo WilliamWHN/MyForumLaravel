@@ -10,6 +10,7 @@ class Reference extends Model
     use HasFactory;
 
     public $timestamps = false;
+<<<<<<< HEAD
 
     // ============= Relationships
 
@@ -21,4 +22,6 @@ class Reference extends Model
     {
         return $this->belongsToMany(Opinion::class); // here we specify table and keys because the order of the fields in the table does not comply with the convention
     }
+=======
+>>>>>>> Dev
 }

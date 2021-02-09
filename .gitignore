@@ -1,6 +1,21 @@
+<<<<<<< HEAD
 vendor/
 node_modules/
 npm-debug.log
+=======
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+>>>>>>> Dev
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -24,4 +39,17 @@ Homestead.json
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
 .idea/
+<<<<<<< HEAD
 *.mwb.bak
+=======
+
+.vscode/launch.json
+
+public/assets/
+
+public/css/
+
+public/js/
+
+log/capistrano.log
+>>>>>>> Dev

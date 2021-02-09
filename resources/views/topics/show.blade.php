@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> Dev
 @extends ('layout')
 
 @section ('content')

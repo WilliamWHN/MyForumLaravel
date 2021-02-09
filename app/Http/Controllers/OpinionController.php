@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Opinion;
 use App\Rules\ElaboratedComment;
 use Illuminate\Http\Request;
+=======
+use Illuminate\Http\Request;
+use App\Models\Opinion;
+>>>>>>> Dev
 use Illuminate\Support\Facades\Auth;
 
 class OpinionController extends Controller
@@ -85,6 +90,7 @@ class OpinionController extends Controller
         //
     }
 
+<<<<<<< HEAD
     /**
      * Add a comment to an opinion
      * @param Request $request
@@ -99,5 +105,12 @@ class OpinionController extends Controller
         $opinion = Opinion::find($request->input('opinion'));
         $opinion->comments()->attach(Auth::user(),['comment' => $request->input('newcomm'),'points' => $request->input('points')]);
         return redirect(route('topics.show',$opinion->topic))->with('message','Commentaire enregistré');
+=======
+    public function newComment(Request $request)
+    {
+        $opinion = Opinion::find($request->input('opinionid'));
+        $opinion->comments()->attach(Auth::user(),['comment' => $request->input('newcomm'), 'points' => $request->input('points')]);
+        return redirect(route('topics.show',$opinion->topic))->with('message', 'Commentaire ajouté');
+>>>>>>> Dev
     }
 }

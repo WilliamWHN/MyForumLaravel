@@ -3,9 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ReferenceController;
+<<<<<<< HEAD
 use App\Http\Controllers\API\ThemeController;
 use \App\Http\Controllers\API\TopicController;
 use \App\Http\Controllers\API\OpinionController;
+=======
+
+>>>>>>> Dev
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +28,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resources([
     'references' => ReferenceController::class,
+<<<<<<< HEAD
     'categories' => ThemeController::class,
     'topics' => TopicController::class,
     'messages' => OpinionController::class
@@ -32,3 +37,9 @@ Route::resources([
 Route::get('topics/ofcategory/{id}',[ThemeController::class,'topics']);
 Route::get('messages/oftopic/{id}',[TopicController::class,'opinions']);
 Route::get('replies/tomessage/{id}',[OpinionController::class,'comments']);
+=======
+]);
+
+
+
+>>>>>>> Dev

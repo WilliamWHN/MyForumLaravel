@@ -11,6 +11,7 @@ class Theme extends Model
 
     public $timestamps = false;
 
+<<<<<<< HEAD
     // ============= Relationships
 
     public function topics()
@@ -18,4 +19,9 @@ class Theme extends Model
         return $this->hasMany(Topic::class);
     }
 
+=======
+    public function topics(){
+        return $this->hasMany(Topic::class);
+    }
+>>>>>>> Dev
 }

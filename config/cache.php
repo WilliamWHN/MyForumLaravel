@@ -27,7 +27,11 @@ return [
     | same cache driver to group types of items stored in your caches.
     |
     | Supported drivers: "apc", "array", "database", "file",
+<<<<<<< HEAD
     |            "memcached", "redis", "dynamodb"
+=======
+    |            "memcached", "redis", "dynamodb", "null"
+>>>>>>> Dev
     |
     */
 

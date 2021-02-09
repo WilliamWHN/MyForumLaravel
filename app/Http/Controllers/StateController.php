@@ -13,7 +13,11 @@ class StateController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return view ('states.index');
+=======
+        //
+>>>>>>> Dev
     }
 
     /**

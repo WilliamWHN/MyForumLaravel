@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> Dev
 namespace App\Policies;
 
 use App\Models\Opinion;
@@ -92,11 +95,14 @@ class OpinionPolicy
         //
     }
 
+<<<<<<< HEAD
     /**
      * A user can comment an opinion only if he has posted some opinions of his own
      * @param User $user
      * @return bool
      */
+=======
+>>>>>>> Dev
     public function comment(User $user)
     {
         return $user->opinions->count() > config('app.min_opinions_for_comments');

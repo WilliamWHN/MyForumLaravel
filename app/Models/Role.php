@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
@@ -29,4 +30,12 @@ class Role extends Model
         return DB::table('users')->where('role_id', $this->id)->exists();
     }
 
+=======
+
+class Role extends Model
+{
+    use HasFactory;
+
+    public $timestamps = false;
+>>>>>>> Dev
 }

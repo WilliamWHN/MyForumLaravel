@@ -16,7 +16,10 @@ class CreateRolesTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('name', 15)->unique('name_UNIQUE');
+<<<<<<< HEAD
 			$table->string('slug', 10)->unique('slug_UNIQUE');
+=======
+>>>>>>> Dev
 		});
 	}
 

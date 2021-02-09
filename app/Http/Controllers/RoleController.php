@@ -13,7 +13,11 @@ class RoleController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return view ('roles.index');
+=======
+        //
+>>>>>>> Dev
     }
 
     /**

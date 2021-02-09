@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="/assets/mdbootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/mdbootstrap/css/mdb.css">
     <link rel="stylesheet" href="/assets/@fortawesome/fontawesome-free/css/all.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/app.css">
+=======
+    <link rel="stylesheet" href="css/app.css">
+>>>>>>> Dev
     <script src="/assets/mdbootstrap/js/jquery.js"></script>
     <script src="/assets/mdbootstrap/js/bootstrap.js"></script>
     <script src="/assets/mdbootstrap/js/popper.js"></script>
@@ -14,6 +18,7 @@
     @stack('scripts')
 </head>
 <body>
+<<<<<<< HEAD
 <div class="w-100 bg-primary font-weight-bolder p-3 navbar"><a class="text-reset title" href="/">My Forum</a></div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <ul class="navbar-nav mr-auto">
@@ -27,6 +32,18 @@
             @endif
         @else
             <li class="nav-item"><a href="{{ route('login') }}" class="btn danger-color">Login</a></li>
+=======
+<div class="w-100 bg-primary font-weight-bolder p-5 navbar"><a class="text-reset" href="/"><h1>My Forum</h1></a></div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+        @if(Auth::user())
+            <form method="post" action="{{ route('logout') }}">
+                @csrf
+                <li class="nav-item"><button type="submit" class="btn btn-danger">Logout {{ Auth::user()->pseudo }}</button></li>
+            </form>
+        @else
+            <li class="nav-item"><a href="{{ route('login') }}" class="btn btn-primary">Login</a></li>
+>>>>>>> Dev
         @endif
         <li class="nav-item"><a href="{{ route('themes.index') }}" class="btn">Gestion des thèmes</a></li>
         <li class="nav-item"><a href="{{ route('references.index') }}" class="btn">Gestion des références</a></li>
