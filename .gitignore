@@ -9,10 +9,6 @@ app/storage/
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
-# Things handled by webpack
-public/assets
-public/js
-public/css
 
 storage/*.key
 .env.*.php
