@@ -11,6 +11,8 @@ class Topic extends Model
 
     public $timestamps = false;
 
+    // ============= Relationships
+
     public function theme()
     {
         return $this->belongsTo(Theme::class);
@@ -19,5 +21,19 @@ class Topic extends Model
     public function opinions()
     {
         return $this->hasMany(Opinion::class);
+    }
+
+    /**
+     * The user who submitted the topic
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
     }
 }

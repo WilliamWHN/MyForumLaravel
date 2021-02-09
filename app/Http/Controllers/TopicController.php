@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Theme;
+use App\Models\User;
+use App\Models\State;
+use App\Models\Topic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ThemeController extends Controller
+class TopicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,8 @@ class ThemeController extends Controller
      */
     public function index()
     {
-        return view ('themes.index');
+        $topics = Topic::all();
+        return view('topics.index')->with(compact('topics'));
     }
 
     /**
@@ -35,7 +39,16 @@ class ThemeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $themeid = $request->input('theme');
+        $newtopic = new Topic();
+        // record the topic's description
+        $newtopic->description = $request->input('newtop');
+        $newtopic->user()->associate(Auth::user());
+        $initialstate = State::where('slug','PROPOSED')->first();
+        $newtopic->state()->associate($initialstate);
+        $newtopic->theme()->associate($themeid);
+        $newtopic->save();
+        return redirect(route('themes.show',$themeid))->with('message','Sujet ajouté');
     }
 
     /**
@@ -46,8 +59,8 @@ class ThemeController extends Controller
      */
     public function show($id)
     {
-        $theme = Theme::find($id);
-        return view('themes.show')->with(compact('theme'));
+        $topic = Topic::find($id);
+        return view('topics.show')->with(compact('topic'));
     }
 
     /**

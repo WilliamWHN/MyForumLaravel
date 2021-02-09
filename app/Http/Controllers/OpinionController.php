@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Opinion;
+use Illuminate\Support\Facades\Auth;
 
 class OpinionController extends Controller
 {
@@ -13,7 +15,7 @@ class OpinionController extends Controller
      */
     public function index()
     {
-        //
+        return view ('opinions.index');
     }
 
     /**
@@ -80,5 +82,12 @@ class OpinionController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function newComment(Request $request)
+    {
+        $opinion = Opinion::find($request->input('opinionid'));
+        $opinion->comments()->attach(Auth::user(),['comment' => $request->input('newcomm'), 'points' => $request->input('points')]);
+        return redirect(route('topics.show',$opinion->topic))->with('message', 'Commentaire ajouté');
     }
 }

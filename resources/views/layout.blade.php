@@ -20,7 +20,7 @@
         @if(Auth::user())
             <form method="post" action="{{ route('logout') }}">
                 @csrf
-                <li class="nav-item"><button type="submit" class="btn btn-danger">Logout</button></li>
+                <li class="nav-item"><button type="submit" class="btn btn-danger">Logout {{ Auth::user()->pseudo }}</button></li>
             </form>
         @else
             <li class="nav-item"><a href="{{ route('login') }}" class="btn btn-primary">Login</a></li>
