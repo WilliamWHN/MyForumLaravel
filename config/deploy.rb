@@ -4,7 +4,7 @@ lock '3.15.0'
 set :application, 'My_Forum'
 set :repo_url, 'git@github.com:WilliamWHN/MyForumLaravel.git'
 # Default branch is :master
-set :branch, ENV["branch"] || "master"
+set :branch, ENV["branch"] || "Dev"
 # Default deploy_to directory is /var/www/laravel-capistrano
 set :deploy_to, '/home/cld2_12/cld2-12.mycpnv.ch'
 set :use_sudo, false

@@ -20,3 +20,5 @@ public/assets/
 public/css/
 
 public/js/
+
+log/capistrano.log
