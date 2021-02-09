@@ -17,12 +17,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'pseudo',
         'first_name',
         'last_name',
-        'pseudo',
         'email',
         'password',
-        'role_id',
+        'role_id'
     ];
 
     /**
@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Opinion::class);
     }
+
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
+
+
 }

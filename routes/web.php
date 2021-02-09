@@ -1,12 +1,16 @@
 <?php
 
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\TopicController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OpinionController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\ReferenceController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StateController;
-use App\Http\Controllers\TopicController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,20 +24,16 @@ use App\Http\Controllers\TopicController;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 
-
 Route::middleware('auth')->group(function () {
     Route::Resource('opinions', OpinionController::class);
-    Route::post('opinions/comment', [OpinionController::class, 'newComment'])->name('opinions.comment');
+    Route::post('opinions/comment/', [OpinionController::class, 'newComment'])->name('opinions.comment');
     Route::Resource('references', ReferenceController::class);
     Route::Resource('roles', RoleController::class);
     Route::Resource('states', StateController::class);
     Route::Resource('themes', ThemeController::class);
     Route::Resource('topics', TopicController::class);
+    Route::Resource('users', UserController::class);
+
 });
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
