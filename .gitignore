@@ -24,10 +24,4 @@ Homestead.json
 
 .vscode/launch.json
 
-public/assets/
-
-public/css/
-
-public/js/
-
 log/capistrano.log
