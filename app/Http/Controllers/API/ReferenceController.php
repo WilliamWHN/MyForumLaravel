@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\ReferenceResource;
-use App\Http\Resources\ReferenceResourceCollection;
-use App\Models\Reference;
 use Illuminate\Http\Request;
+
+use App\Http\Resources\Reference as ReferenceResource;
+use App\Http\Resources\ReferenceCollection;
+use App\Models\Reference;
+
 
 class ReferenceController extends Controller
 {
@@ -17,7 +19,7 @@ class ReferenceController extends Controller
      */
     public function index()
     {
-        return new ReferenceResourceCollection(Reference::all());
+        return new ReferenceCollection(Reference::all());
     }
 
     /**
@@ -39,7 +41,7 @@ class ReferenceController extends Controller
      */
     public function show($id)
     {
-        return new ReferenceResource(Reference::find($id));
+        return new  ReferenceResource(Reference::findOrFail($id));
     }
 
     /**

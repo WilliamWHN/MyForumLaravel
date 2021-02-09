@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reference;
+use App\Http\Requests\StoreReference;
 use Illuminate\Http\Request;
 
 class ReferenceController extends Controller
@@ -35,7 +36,7 @@ class ReferenceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreReference $request)
     {
         $reference = new Reference();
         $reference->description = $request->input('description');
@@ -75,13 +76,14 @@ class ReferenceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreReference $request, $id)
     {
         $reference = Reference::find($id);
         $reference->description = $request->input('description');
         $reference->url = $request->input('url');
         $reference->save();
-        return redirect(route('references.show',$id))->with('message','Modification enregistrée');
+        $request->session()->flash('message',"Modification enregistrée");
+        return view ('references.show')->with(compact('reference'));
     }
 
     /**

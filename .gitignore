@@ -25,3 +25,13 @@ Homestead.json
 .rocketeer/
 .idea/
 *.mwb.bak
+
+.vscode/launch.json
+
+public/assets/
+
+public/css/
+
+public/js/
+
+log/capistrano.log
